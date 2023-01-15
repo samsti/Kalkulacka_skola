@@ -2,26 +2,47 @@
 
 function vypocet() {
 
-    let vyberOpearace = document.getElementById('operace')
     let prvniCislo = parseFloat(document.getElementById('inputText1').value);
-    let druheiCislo = parseFloat(document.getElementById('inputText2').value);
-    let vysledek = document.getElementById('vysledek')
+    let druheCislo = parseFloat(document.getElementById('inputText2').value);
+    let vyberOperace = document.getElementById('operace');
+    let operace = vyberOperace.options[vyberOperace.selectedIndex].value;
+    let vysledekHtml = document.getElementById('vysledek');
+    let vysledek;
 
-        switch (vyberOpearace.value) {
-            case '+':
-                vysledek.innerHTML = prvniCislo.value + druheiCislo.value
+
+    if(isNaN(prvniCislo) || isNaN(druheCislo)){
+        window.alert("Zadejte obě čísla prosím")
+        vysledekHtml = "";
+    }
+
+    console.log(prvniCislo)
+    
+        switch (operace) {
+            
+            case '1':
+                vysledek = prvniCislo + druheCislo
+                vysledekHtml.innerHTML = vysledek;
                 break;
-            case '-':
-                vysledek.innerHTML = prvniCislo.value - druheiCislo.value
+            case '2':
+                vysledek = prvniCislo - druheCislo
+                vysledekHtml.innerHTML = vysledek;
                 break;
-            case '*':
-                vysledek.innerHTML = prvniCislo.value * druheiCislo.value
+            case '3':
+                vysledek = prvniCislo * druheCislo
+                vysledekHtml.innerHTML = vysledek;
                 break;
-            case '÷':
-                vysledek.innerHTML = prvniCislo.value / druheiCislo.value
+            case '4':
+                if(prvniCislo != 0 & druheCislo != 0){
+                    vysledek = prvniCislo / druheCislo
+                    vysledekHtml.innerHTML = vysledek;
+                }else{
+                    window.alert("Nula nulou nelze dělit!")
+                }
                 break;
 
         }
+        
+        
 }
 
 
