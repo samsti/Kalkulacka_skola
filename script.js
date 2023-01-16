@@ -15,7 +15,6 @@ function vypocet() {
         vysledekHtml = "";
     }
 
-    console.log(prvniCislo)
     
         switch (operace) {
             
