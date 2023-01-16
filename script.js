@@ -2,8 +2,8 @@
 
 function vypocet() {
 
-    let prvniCislo = parseFloat(document.getElementById('inputText1').value);
-    let druheCislo = parseFloat(document.getElementById('inputText2').value);
+    let prvniCislo = parseFloat(document.getElementById('inputText1').value.replaceAll(",", "."));
+    let druheCislo = parseFloat(document.getElementById('inputText2').value.replaceAll("," , "."));
     let vyberOperace = document.getElementById('operace');
     let operace = vyberOperace.options[vyberOperace.selectedIndex].value;
     let vysledekHtml = document.getElementById('vysledek');
